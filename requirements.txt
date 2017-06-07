@@ -1,0 +1,4 @@
+tornado==4.4.1
+sqlalchemy==1.1.10
+configparser==3.5.0
+pymysql==0.7.9
