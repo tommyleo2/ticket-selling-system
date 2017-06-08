@@ -8,7 +8,7 @@ import sys
 
 
 def start():
-    app.run(port=g_config["App"].get("port", 9999))
+    app.run(host="0.0.0.0", port=g_config["App"].get("port", 9999))
 
 
 def test():
