@@ -1,9 +1,10 @@
 #!/bin/sh
 
-while true; do
-    ping -c1 mysql > /dev/null && break
+until nc -z -v -w30 database 3306
+do
+    echo "Waiting for database connection..."
+    # wait for 5 seconds before check again
     sleep 1
-    echo "Waiting for mysql to start"
 done
 
 python3 server.py start

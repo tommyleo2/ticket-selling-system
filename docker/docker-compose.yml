@@ -4,21 +4,22 @@ services:
   ticket_server:
     build:
       dockerfile: Dockerfile.server
-      context: .
+      context: ../src
     image: ticket-server:1.0
     container_name: ticket_server
     ports:
       - "9999:9999"
     depends_on:
-      - mysql
+      - database
     links:
-      - mysql
+      - database
 
-  mysql:
-    image: mysql:5.7
+  database:
+    build:
+      dockerfile: Dockerfile.mysql
+      context: .
+    image: ticket-mysql:1.0
     container_name: database
-    ports:
-      - "3307:3307"
     volumes:
       - /var/lib/mysql
     environment:
