@@ -1,4 +1,5 @@
-tornado==4.4.1
+flask==0.12
 sqlalchemy==1.1.10
+flask_sqlalchemy==2.2
 configparser==3.5.0
 pymysql==0.7.9

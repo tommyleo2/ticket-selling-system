@@ -32,3 +32,5 @@ from .ticket import Ticket
 from .ticket_in_order import TicketInOrder
 from .timetable import TimeTable
 from .user import User
+
+db.create_all()
