@@ -29,14 +29,14 @@ Form data:
 `403` on failed
 ```json
 {
-    “message”: "invalid argument"
+    "message": "invalid argument"
 }
 
 ```
 `409` on registered 
 ```json
 {
-    “message”: "user registered"
+    "message": "user registered"
 }
 
 ```
@@ -59,7 +59,7 @@ Form data:
 `404` on failed
 ```json
 {
-    “message”: "name or password incorrect"
+    "message": "name or password incorrect"
 }
 ```
 
@@ -88,7 +88,7 @@ Get cinema list
 ```json
 [
     {
-        "id": 1
+        "id": 1,
         "name": "Big Theatre"
     },
     ...
@@ -113,7 +113,7 @@ Get cinema info
 `404` on failed
 ```json
 {
-    “message”: "unknown cinema name"
+    "message": "unknown cinema name"
 }
 ```
 
@@ -152,7 +152,7 @@ Get movies list shown in a cinema
 `404` on failed
 ```json
 {
-    “message”: "unknown cinema name"
+    "message": "unknown cinema name"
 }
 ```
 
@@ -253,7 +253,7 @@ cookie required
 ```json
 [
     {
-        "id": 1
+        "id": 1,
         "name": "Big Theatre"
     },
 ]
@@ -284,12 +284,12 @@ Query:
 ```json
 [
     {
-        "id": 1
+        "id": 1,
         "movie": "Movie A",
         "cinema": "Greate Theatre",
         "room": "2",
         "seat": "G10",
-        "start_at": "2017-05-25 13:30"
+        "start_at": "2017-05-25 13:30",
         "length": 95
     },
 ]
