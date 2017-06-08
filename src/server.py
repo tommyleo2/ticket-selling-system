@@ -2,11 +2,13 @@
 
 from app import app
 from test import test_schema
+from app.utility.config import g_config
+
 import sys
 
 
 def start():
-    app.run()
+    app.run(port=g_config["App"].get("port", 9999))
 
 
 def test():

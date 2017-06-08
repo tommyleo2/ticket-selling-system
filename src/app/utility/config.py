@@ -11,3 +11,8 @@ try:
     g_config["MySQL"]["database"]
 except KeyError as e:
     raise KeyError("Cannot find key: MySQL.%s" % e.args)
+
+try:
+    g_config["App"]
+except KeyError as e:
+    g_config.add_section('App')
