@@ -21,3 +21,5 @@ if __name__ == "__main__":
             start()
         elif sys.argv[1] == "test":
             test()
+    else:
+        print("unrecognized cmd, exiting...")
