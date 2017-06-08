@@ -5,7 +5,7 @@ from app import app
 from app.utility.config import g_config
 
 if "ENV" in os.environ and os.environ["ENV"] == "CI_ENV":
-    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite3:///tmp.db"
+    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///tmp.db"
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://{user}:{password}@{server}:3306/{database}?\
 charset=utf8".format(user=g_config.get("MySQL", "username"),

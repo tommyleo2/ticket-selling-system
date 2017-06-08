@@ -1,5 +1,7 @@
 # Ticket Selling System
 
+[![Build Status](https://travis-ci.org/tommyleo2/ticket-selling-system.svg?branch=master)](https://travis-ci.org/tommyleo2/ticket-selling-system)
+
 ## Database Design
 ### Database Class Diagram
 
