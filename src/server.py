@@ -1,14 +1,12 @@
-import tornado.ioloop
-from application import application
-from test import test_schema
-from utility.config import g_config
+#!/usr/bin/env python3
 
+from app import app
+from test import test_schema
 import sys
 
 
 def start():
-    application.listen(g_config.get("App", "port", fallback=9999))
-    tornado.ioloop.IOLoop.current().start()
+    app.run()
 
 
 def test():
