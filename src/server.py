@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from app import app
-from test import test_schema
+from test import test_all
 from app.utility.config import g_config
 
 import sys
@@ -12,7 +12,7 @@ def start():
 
 
 def test():
-    test_schema.test()
+    test_all()
 
 
 if __name__ == "__main__":
