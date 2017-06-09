@@ -115,7 +115,7 @@ Get cinema info
 `404` on failed
 ```json
 {
-    "message": "unknown cinema name"
+    "message": "unknown cinema"
 }
 ```
 
@@ -135,18 +135,12 @@ Get movies list shown in a cinema
     {
         "id": 1,
         "name": "Movie A",
-        "show time": [
-            "2017-05-25 13:30",
-            ...
-        ]
+        "length": 95
     },
     {
         "id": 2,
         "name": "Movie B",
-         "show time": [
-            "2017-05-25 13:30",
-            ...
-        ]
+        "length": 95
     },
     ...
 ]
@@ -154,7 +148,32 @@ Get movies list shown in a cinema
 `404` on failed
 ```json
 {
-    "message": "unknown cinema name"
+    "message": "unknown cinema"
+}
+```
+
+---
+
+### Get cinema movie show time
+Get show time of a movie in a cinema
+
+#### Method & URI
+`GET /cinema/{cinema id}/movies/{movie_id}`
+
+
+#### Response
+`200` on success
+```json
+[
+    "2017-05-25 17:00",
+    "2017-05-26 17:00",
+    ...
+]
+```
+`404` on failed
+```json
+{
+    "message": "unknown cinema"
 }
 ```
 
@@ -204,7 +223,7 @@ Get movie info
 `404` on failed
 ```json
 {
-    "message": "unknown movie name"
+    "message": "unknown movie"
 }
 ```
 
@@ -223,11 +242,7 @@ Get a list of cinima that is playing the movie
 [
     {
         "id": 1,
-        "name": "Big Theatre",
-         "show time": [
-            "2017-05-25 13:30",
-            ...
-        ]
+        "name": "Big Theatre"
     },
     ...
 ]

@@ -10,4 +10,4 @@ class ShowIn(BaseModel, db.Model):
                          nullable=False, index=True)
     cinema = db.relationship("Cinema")
     movie = db.relationship("Movie")
-    timetable = db.relationship("TimeTable")
+    timetables = db.relationship("TimeTable")

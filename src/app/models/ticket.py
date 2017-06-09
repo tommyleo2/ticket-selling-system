@@ -8,7 +8,8 @@ class Ticket(BaseModel, db.Model):
                           nullable=False, index=True)
     movie_id = db.Column(db.Integer, db.ForeignKey("movie.movie_id"),
                          nullable=False, index=True)
-    timetable_id = db.Column(db.Integer, db.ForeignKey("timetable.timetable_id"))
+    timetable_id = db.Column(db.Integer, db.ForeignKey("timetable.timetable_id"),
+                             nullable=False)
     room = db.Column(db.String(10), nullable=False)
     seat = db.Column(db.String(10), nullable=False)
     cinema = db.relationship("Cinema")
