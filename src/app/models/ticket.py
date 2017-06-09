@@ -10,9 +10,12 @@ class Ticket(BaseModel, db.Model):
                          nullable=False, index=True)
     timetable_id = db.Column(db.Integer, db.ForeignKey("timetable.timetable_id"),
                              nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"),
+                        index=True)
     room = db.Column(db.String(10), nullable=False)
     seat = db.Column(db.String(10), nullable=False)
     cinema = db.relationship("Cinema")
     movie = db.relationship("Movie")
     ticket_in_order = db.relationship("TicketInOrder")
     timetable = db.relationship("TimeTable")
+    user = db.relationship("User")

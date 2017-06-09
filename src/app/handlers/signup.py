@@ -10,7 +10,7 @@ from ..models import User
 @app.route("/signup", methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-        if 'name' in session:
+        if 'id' in session:
             # print("already signed up")
             session.pop('name', None)
 
@@ -42,7 +42,7 @@ def signup():
                 "message": "user name registered"
             }), 409
 
-        session["name"] = name
+        session["id"] = user.user_id
         resp = make_response()
         return resp
 

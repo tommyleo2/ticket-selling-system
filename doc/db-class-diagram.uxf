@@ -7,29 +7,28 @@
 3. Ticket
 4. Order
 5. Movie</help_text>
-  <zoom_level>11</zoom_level>
+  <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>561</x>
-      <y>451</y>
-      <w>143</w>
-      <h>99</h>
+      <x>560</x>
+      <y>610</y>
+      <w>130</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>Ticket
 --
 room
-seat
-start_at</panel_attributes>
+seat</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>198</x>
-      <y>176</y>
-      <w>143</w>
-      <h>99</h>
+      <x>210</x>
+      <y>200</y>
+      <w>130</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>Cinema
 --
@@ -40,10 +39,10 @@ info</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>198</x>
-      <y>451</y>
-      <w>143</w>
-      <h>99</h>
+      <x>210</x>
+      <y>610</y>
+      <w>130</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>Movie
 --
@@ -55,24 +54,24 @@ info</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>264</x>
-      <y>264</y>
-      <w>99</w>
-      <h>209</h>
+      <x>270</x>
+      <y>280</y>
+      <w>90</w>
+      <h>350</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..*
 m2=0..*
 shown ^</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;330.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>880</x>
-      <y>198</y>
-      <w>143</w>
-      <h>99</h>
+      <x>830</x>
+      <y>380</y>
+      <w>130</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>User
 --
@@ -85,37 +84,37 @@ phone</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>330</x>
-      <y>484</y>
-      <w>253</w>
-      <h>55</h>
+      <y>640</y>
+      <w>250</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1..1
 m2=0..*
 &lt; tickets of</panel_attributes>
-    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;230.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>330</x>
-      <y>209</y>
-      <w>352</w>
-      <h>264</h>
+      <y>230</y>
+      <w>330</w>
+      <h>400</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1..1
 m2=0..*
 sales &gt;</panel_attributes>
-    <additional_attributes>10.0;20.0;280.0;20.0;280.0;220.0</additional_attributes>
+    <additional_attributes>10.0;20.0;290.0;20.0;290.0;380.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>880</x>
-      <y>451</y>
-      <w>143</w>
-      <h>99</h>
+      <x>830</x>
+      <y>610</y>
+      <w>130</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>Order
 --
@@ -126,24 +125,24 @@ ordered_at</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>693</x>
-      <y>484</y>
-      <w>209</w>
-      <h>55</h>
+      <x>680</x>
+      <y>640</y>
+      <w>170</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1..*
 m2=0..1
 ordered by &gt;</panel_attributes>
-    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>946</x>
-      <y>286</y>
-      <w>88</w>
-      <h>187</h>
+      <x>890</x>
+      <y>460</y>
+      <w>80</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1..1
@@ -154,48 +153,48 @@ order v</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>264</x>
-      <y>330</y>
-      <w>121</w>
-      <h>33</h>
+      <x>270</x>
+      <y>350</y>
+      <w>80</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>363</x>
-      <y>297</y>
-      <w>154</w>
-      <h>99</h>
+      <x>330</x>
+      <y>320</y>
+      <w>140</w>
+      <h>70</h>
     </coordinates>
-    <panel_attributes>TimeTable
+    <panel_attributes>ShowIn
 --
-playing_time[1..*]</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>506</x>
-      <y>319</y>
-      <w>143</w>
-      <h>154</h>
+      <x>460</x>
+      <y>500</y>
+      <w>160</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1..1
 m2=0..*
-&lt; start at</panel_attributes>
-    <additional_attributes>10.0;20.0;90.0;20.0;90.0;120.0</additional_attributes>
+booked by v</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0;120.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>737</x>
-      <y>583</y>
-      <w>110</w>
-      <h>66</h>
+      <x>690</x>
+      <y>730</y>
+      <w>120</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>TicketInOrder
 --</panel_attributes>
@@ -204,12 +203,53 @@ m2=0..*
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>781</x>
-      <y>495</y>
-      <w>33</w>
-      <h>110</h>
+      <x>740</x>
+      <y>650</y>
+      <w>30</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>400</y>
+      <w>200</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=0..1
+own v</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>480</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>TimeTable
+--
+start_at</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>380</y>
+      <w>90</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=1..*
+start at v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
 </diagram>

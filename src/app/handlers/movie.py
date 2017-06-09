@@ -1,7 +1,7 @@
 import json
 
 from app import app
-from ..models import Cinema, ShowIn, Movie
+from ..models import ShowIn, Movie
 
 
 @app.route("/movie", methods=["GET"])

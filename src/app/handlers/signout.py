@@ -6,5 +6,5 @@ from app import app
 @app.route("/signout", methods=['GET', 'POST'])
 def signout():
     if request.method == 'POST':
-        session.pop('name', None)
+        session.pop('id', None)
         return '', 200

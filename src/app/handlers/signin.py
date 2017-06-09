@@ -10,7 +10,7 @@ from ..models import User
 def signin():
     if request.method == 'POST':
 
-        if 'name' in session:
+        if 'id' in session:
             # print("already signed in")
             return '', 200
 
@@ -41,7 +41,7 @@ def signin():
                 "message": "password incorrect"
             }), 404
 
-        session["name"] = name
+        session["id"] = user.user_id
         resp = make_response()
         return resp
 

@@ -10,4 +10,4 @@ class Order(BaseModel, db.Model):
                         nullable=False, index=True)
     order_at = db.Column(db.DateTime, default=datetime.datetime.now)
     user = db.relationship("User")
-    ticket_in_order = db.relationship("TicketInOrder")
+    tickets_in_order = db.relationship("TicketInOrder")

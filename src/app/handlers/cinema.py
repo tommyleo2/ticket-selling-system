@@ -2,6 +2,7 @@ import json
 
 from app import app
 from ..models import Cinema, ShowIn, Movie
+from ..utility import format_datetime
 
 
 @app.route("/cinema", methods=["GET"])
@@ -69,5 +70,5 @@ def get_cinema_movie_show_itme(cinema_id, movie_id):
     for each in show_in:
         timetables = each.timetables
         for timetable in timetables:
-            result.append(timetable.start_at.strftime("%Y-%m-%d %H:%M"))
+            result.append(format_datetime(timetable.start_at))
     return json.dumps(result), 200
