@@ -343,28 +343,19 @@ An array of ticket_id
 Cookie needed
 #### Response
 `200` on success
-`404` on non-existed tickets
+`404` on non-existed tickets or on ticket already been sold
 ```json
 {
-    "message": "tickets not exist",
+    "message": "tickets not exist or already been sold",
     "tickets": [
         1,
         2,
         ...
     ]
+
 }
 ```
-`409` on ticket already been sold
-```json
-{
-    "message": "tickets already been sold",
-    "tickets": [
-        1,
-        2,
-        ...
-    ]
-}
-```
+
 `401` not logged in
 ```json
 {
