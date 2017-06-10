@@ -2,10 +2,12 @@ FROM python:3-alpine
 
 RUN ["ln", "-sf", "/usr/share/zoneinfo/Asia/Shanghai", "/etc/localtime"]
 
-COPY . /ticket-server/
+COPY requirements.txt /ticket-server/
 
 WORKDIR /ticket-server
 
 RUN pip3 install -r requirements.txt
+
+COPY src /ticket-server
 
 ENTRYPOINT ["sh", "docker-entrypoint.sh"]

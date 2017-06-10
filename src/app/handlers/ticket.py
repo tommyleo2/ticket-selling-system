@@ -1,4 +1,4 @@
-from flask import session
+from flask import session, request
 import json
 
 from app import app
@@ -24,6 +24,28 @@ def get_myticket():
             "cinema_id": cinema.cinema_id,
             "movie_name": movie.movie_name,
             "cinema_name": cinema.cinema_name,
+            "start_at": format_datetime(ticket.timetable.start_at)
+        })
+    return json.dumps(result), 200
+
+
+@app.route("/ticket", methods=["GET"])
+def get_movie_cinema_ticket():
+    cinema = request.args.get("cinema")
+    movie = request.args.get("movie")
+    if cinema is None or movie is None:
+        return json.dumps({
+            "message": "invalid query parameters"
+        }), 400
+
+    tickets = Ticket.query.filter_by(cinema_id=cinema, movie_id=movie)
+    result = []
+    for ticket in tickets:
+        result.append({
+            "id": ticket.ticket_id,
+            "room": ticket.room,
+            "seat": ticket.seat,
+            "is_booked": ticket.user_id is not None,
             "start_at": format_datetime(ticket.timetable.start_at)
         })
     return json.dumps(result), 200

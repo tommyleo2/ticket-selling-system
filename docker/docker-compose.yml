@@ -4,7 +4,7 @@ services:
   ticket_server:
     build:
       dockerfile: Dockerfile.server
-      context: ../src
+      context: ..
     image: ticket-server:1.0
     container_name: ticket_server
     ports:
