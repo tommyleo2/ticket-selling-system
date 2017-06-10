@@ -1,8 +1,8 @@
 from flask import session, request
 import json
 
-from app import app, db
-from ..models import Ticket, TicketInOrder, Order
+from app import app
+from ..models import Ticket, TicketInOrder, Order, db
 from ..utility import format_datetime
 
 
@@ -28,16 +28,16 @@ def get_myticket():
         })
     return json.dumps(result), 200
 
+
 @app.route("/ticket/buy", methods=["POST"])
 def buy_ticket():
-    print("Fuck")
     if 'id' not in session:
         return json.dumps({
                 "message": "not logged in",
             }), 401
 
     req = request.get_json()
-    if not req or isinstance(req, list):
+    if not req or not isinstance(req, list):
         return json.dumps({
                 "message": "you are a sb!"
             }), 404
@@ -53,28 +53,33 @@ def buy_ticket():
 
     if len(non_existed_or_sold_tickets) == 0:
         user_id = session["id"]
-        order = Order(user_id = user_id)
-        db.session.add(Order)
+        order = Order(user_id=user_id)
+        db.session.add(order)
+        db.session.flush()
+        db.session.refresh(order)
         for ticket in tickets:
-            tIo = TicketInOrder(order_id = order.order_id, ticket_id = ticket.ticket_id)
+            tIo = TicketInOrder(ticket_id=ticket.ticket_id,
+                                order_id=order.order_id)
             db.session.add(tIo)
             ticket.user_id = user_id
 
         try:
             db.session.commit()
             return json.dumps({
-                    "message":"success"
+                    "message": "success"
                 }), 200
-        except:
+        except Exception as e:
+            print(e)
             return json.dumps({
-                    "message":"Unknown error"
+                    "message": "Unknown error"
                 }), 403
 
     else:
         return json.dumps({
-                "message":"tickets not exist or already been sold",
+                "message": "tickets not exist or already been sold",
                 "tickets": non_existed_or_sold_tickets
             }), 404
+
 
 @app.route("/ticket", methods=["GET"])
 def get_movie_cinema_ticket():
