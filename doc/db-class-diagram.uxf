@@ -91,7 +91,7 @@ phone</panel_attributes>
     <panel_attributes>lt=-
 m1=1..1
 m2=0..*
-&lt; tickets of</panel_attributes>
+tickets &gt;</panel_attributes>
     <additional_attributes>10.0;20.0;230.0;20.0</additional_attributes>
   </element>
   <element>

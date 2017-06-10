@@ -306,12 +306,10 @@ Query:
 [
     {
         "id": 1,
-        "movie": "Movie A",
-        "cinema": "Greate Theatre",
         "room": "2",
         "seat": "G10",
         "start_at": "2017-05-25 13:30",
-        "length": 95
+        "is_booked": false
     },
 ]
 ```
