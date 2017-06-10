@@ -7,4 +7,4 @@ do
     sleep 1
 done
 
-python3 server.py $@
+python3 server.py ${TICKET_SERVER_CMD}

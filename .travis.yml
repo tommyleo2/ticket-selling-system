@@ -9,9 +9,5 @@ install:
   - cd docker
   - docker-compose build
 
-# script:
-#   - cd src
-#   - python3 server.py test
-
-env:
-  - ENV=CI_ENV
+script:
+  - TICKET_SERVER_CMD=test docker-compose up

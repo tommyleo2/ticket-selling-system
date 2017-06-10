@@ -13,6 +13,8 @@ services:
       - database
     links:
       - database
+    environment:
+      - "TICKET_SERVER_CMD=${TICKET_SERVER_CMD}"
 
   database:
     build:
