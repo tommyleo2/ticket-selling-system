@@ -76,3 +76,23 @@ def buy_ticket():
                 "tickets": non_existed_or_sold_tickets
             }), 404
 
+@app.route("/ticket", methods=["GET"])
+def get_movie_cinema_ticket():
+    cinema = request.args.get("cinema")
+    movie = request.args.get("movie")
+    if cinema is None or movie is None:
+        return json.dumps({
+            "message": "invalid query parameters"
+        }), 400
+
+    tickets = Ticket.query.filter_by(cinema_id=cinema, movie_id=movie)
+    result = []
+    for ticket in tickets:
+        result.append({
+            "id": ticket.ticket_id,
+            "room": ticket.room,
+            "seat": ticket.seat,
+            "is_booked": ticket.user_id is not None,
+            "start_at": format_datetime(ticket.timetable.start_at)
+        })
+    return json.dumps(result), 200
