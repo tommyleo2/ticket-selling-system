@@ -7,4 +7,4 @@ do
     sleep 1
 done
 
-python3 server.py start
+python3 server.py $@

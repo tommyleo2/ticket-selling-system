@@ -2,12 +2,16 @@ language: python
 python:
   - 3.5
 
-install:
-  pip install -r requirements.txt
+services:
+  - docker
 
-script:
-  - cd src
-  - python3 server.py test
+install:
+  - cd docker
+  - docker-compose build
+
+# script:
+#   - cd src
+#   - python3 server.py test
 
 env:
   - ENV=CI_ENV

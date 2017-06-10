@@ -69,7 +69,7 @@ def buy_ticket():
                     "message": "success"
                 }), 200
         except Exception as e:
-            print(e)
+            db.session.rollback()
             return json.dumps({
                     "message": "Unknown error"
                 }), 403
