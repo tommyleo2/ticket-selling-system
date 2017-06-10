@@ -274,7 +274,7 @@ cookie required
         "movie_id": 1,
         "movie_name": "Greate movie",
         "cinema_id": 1,
-        "cinema_name": "Greate Theatre"
+        "cinema_name": "Greate Theatre",
         "start_at": "2017-06-01 18:00"
     },
 ]
