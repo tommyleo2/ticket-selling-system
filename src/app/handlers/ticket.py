@@ -39,7 +39,7 @@ def buy_ticket():
     req = request.get_json()
     if not req or not isinstance(req, list):
         return json.dumps({
-                "message": "you are a sb!"
+                "message": "invalid post data"
             }), 404
 
     non_existed_or_sold_tickets = []
