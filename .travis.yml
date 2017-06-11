@@ -5,6 +5,10 @@ python:
 services:
   - docker
 
+before_install:
+  - echo TICKET_SERVER_CMD=test >> docker/.env
+  - echo TICKET_SERVER_PORT=9999 >> docker/.env
+
 install:
   - cd docker
   - docker-compose build
