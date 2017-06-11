@@ -47,7 +47,9 @@ Build and tested on
    
 #### Step
 
-1. Goto `docker/` and execute `docker-compose up -d` and you are all set
+1. Goto `docker/`
+2. Put `.env` file in it with `TICKET_SERVER_CMD=start` as content
+3. Execute `docker-compose up -d` and you are all set
 
 #### Note
 
