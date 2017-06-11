@@ -4,7 +4,7 @@ A simple ticket selling system project using flask, sqlalchemy, mysql, deployed 
 
 [![Build Status](https://travis-ci.org/tommyleo2/ticket-selling-system.svg?branch=master)](https://travis-ci.org/tommyleo2/ticket-selling-system)
 
-Build and tested on 
+Built and tested on 
 - docker 17.05.0-ce, build 89658be
 - docker-compose version 1.8.0, build f3628c7
 
