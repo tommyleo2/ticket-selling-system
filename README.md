@@ -48,9 +48,20 @@ Build and tested on
 #### Step
 
 1. Goto `docker/`
-2. Put `.env` file in it with `TICKET_SERVER_CMD=start` as content
+2. Put `.env` file in it. The content is documented later
 3. Execute `docker-compose up -d` and you are all set
 
 #### Note
 
 Do not modify `src/config.d/config.conf` when you deploy to docker
+
+#### `.env` File
+
+- `TICKET_SERVER_CMD`
+    - `start`
+      Run server
+    - `test`
+      Run test and exit
+- `TICKET_SERVER_PORT`
+    - `9999`
+      Deloying port

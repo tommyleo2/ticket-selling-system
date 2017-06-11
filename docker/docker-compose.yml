@@ -8,7 +8,7 @@ services:
     image: ticket-server:1.0
     container_name: ticket_server
     ports:
-      - "9999:9999"
+      - "${TICKET_SERVER_PORT}:9999"
     depends_on:
       - database
     links:
