@@ -48,7 +48,7 @@ Built and tested on
 #### Step
 
 1. Goto `docker/`
-2. Put `.env` file in it. The content is documented later
+2. Put `.env` file in it. The contents are documented later
 3. Execute `docker-compose up -d` and you are all set
 
 #### Note
@@ -65,3 +65,31 @@ Do not modify `src/config.d/config.conf` when you deploy to docker
 - `TICKET_SERVER_PORT`
     - `9999`
       Deloying port
+
+## Look into deeper
+
+### Flask Session
+
+Flask session is based on cookies, and you must set a secret key to it so that the cookies are encrypted and cannot be read by others
+The secret key is set in `src/app/__init__.py` and is not configurable in `config.conf`file. It is recommanded to use a random string as secret key, just as documented in [Flask quick start](http://flask.pocoo.org/docs/0.12/quickstart/#sessions)
+
+### Database fake data
+
+Python module `mixer` is a fake data generator. To auto-generate data and store them into database, you can start the server with test parameter (pass `test` as parameter when run in host, or set `TICKET_SERVER_PORT=test`in .env file when run in docker)
+Problem is that it cannot deal with FK in a good manner, so to create tickets, you must insert to database on your own.
+More usage is documented in [here](https://mixer.readthedocs.io/en/latest/quickstart.html#sqlalchemy-orm)
+
+### Password hashing
+
+Passwords are hashed and not salted before they are stored into database. To have customed pasword hashing, reference [flask_hashing](http://flask-hashing.readthedocs.io/en/latest/)
+
+## Things can be improved
+
+1. Seperate routers and handlers
+2. Some basic operation can be encapsulated into models
+3. Log system
+4. Distributed system, with nginx as proxy server
+5. Database cluster and data backup
+6. Cache movie and cinema infomation in Redis
+
+...
